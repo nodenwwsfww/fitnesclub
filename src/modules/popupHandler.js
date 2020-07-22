@@ -1,7 +1,7 @@
-const formHandler = () => {
-    const formBlock = document.querySelector(".forms");
+const popupHandler = () => {
+    const formsBlock = document.querySelector(".forms");
 
-    formBlock.addEventListener("click", event => {
+    formsBlock.addEventListener("click", event => {
         const target = event.target;
         const currentPopup = target.closest(".popup");
 
@@ -10,4 +10,4 @@ const formHandler = () => {
         }
     });
 };
-export default formHandler;
+export default popupHandler;
