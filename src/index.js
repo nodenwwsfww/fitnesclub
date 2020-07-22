@@ -1,9 +1,16 @@
-
 import selectClub from "./modules/selectClub";
-import visitPopup from "./modules/visitPopup";
+import popupHandler from "./modules/popupHandler";
+import visitHandler from "./modules/visitHandler";
+import callbackHandler from "./modules/callbackHandler";
 
 // Выбор клуба
 selectClub();
 
+// Обработка всех popup (закрытие на крестик/вне окна)
+popupHandler();
+
 // Запись на бесплатный визит
-visitPopup();
+visitHandler();
+
+// Перезвонить
+callbackHandler();
