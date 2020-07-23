@@ -293,7 +293,7 @@ html#schelkovo .head-slider {
 html#mozaika .head-slider .wrapper,
 html#schelkovo .head-slider .wrapper {
     max-height: 400px;
-    position: relative
+    position: relative;
 }
 
 html#mozaika .head-slider .slider-image,
@@ -1262,7 +1262,6 @@ nav.popup-menu .close-menu-btn img {
     position: relative;
     background: url(../images/head-slider-bg.png) no-repeat center top
 }
-
 .head-slider .wrapper {
     height: 100%;
     max-height: 541px

@@ -1,9 +1,17 @@
+import windowScroll from "./modules/windowScroll";
 import selectClub from "./modules/selectClub";
 import popupHandler from "./modules/popupHandler";
 import visitHandler from "./modules/visitHandler";
 import callbackHandler from "./modules/callbackHandler";
 import giftHandler from "./modules/giftHandler";
 import burgerMenu from "./modules/burgerMenu";
+
+// Событие scroll на странице
+try {
+    windowScroll();
+} finally {
+    //
+}
 
 // Выбор клуба
 try {
