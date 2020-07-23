@@ -6,9 +6,9 @@ const windowScroll = () => {
     window.addEventListener("scroll", () => {
         if (pageYOffset > 0) {
             burgerMenu.style.position = "fixed";
-            arrowUp.style.position = pageYOffset > firstBlock.clientHeight ? "fixed" : "relative";
+            arrowUp.style.position = pageYOffset > firstBlock.clientHeight ? "fixed" : "";
         } else {
-            burgerMenu.style.position = "relative";
+            burgerMenu.style.position = "";
         }
     });
 };
