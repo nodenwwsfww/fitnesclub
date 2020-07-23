@@ -3,18 +3,48 @@ import popupHandler from "./modules/popupHandler";
 import visitHandler from "./modules/visitHandler";
 import callbackHandler from "./modules/callbackHandler";
 import giftHandler from "./modules/giftHandler";
+import burgerMenu from "./modules/burgerMenu";
 
 // Выбор клуба
-selectClub();
+try {
+    selectClub();
+} finally {
+    //
+}
 
 // Обработка всех popup (закрытие на крестик/вне окна)
-popupHandler();
+try {
+    popupHandler();
+} finally {
+    //
+}
 
 // Запись на бесплатный визит
-visitHandler();
+try {
+    visitHandler();
+} finally {
+    //
+}
 
 // Перезвонить
-callbackHandler();
+try {
+    callbackHandler();
+} finally {
+    //
+}
 
 // Подарок
-giftHandler();
+if (!document.documentElement.id) {
+    try {
+        giftHandler();
+    } finally {
+        //
+    }
+}
+
+// Бургер-меню
+try {
+    burgerMenu();
+} finally {
+    //
+}
