@@ -5,6 +5,7 @@ import visitHandler from "./modules/visitHandler";
 import callbackHandler from "./modules/callbackHandler";
 import giftHandler from "./modules/giftHandler";
 import burgerMenu from "./modules/burgerMenu";
+import formHandler from "./modules/formHandler";
 
 // Событие scroll на странице
 try {
@@ -27,6 +28,13 @@ try {
     //
 }
 
+// Обработка всех форм (валидация и отправка запросов)
+try {
+    formHandler();
+} finally {
+    //
+}
+
 // Запись на бесплатный визит
 try {
     visitHandler();
@@ -42,12 +50,10 @@ try {
 }
 
 // Подарок
-if (!document.documentElement.id) {
-    try {
-        giftHandler();
-    } finally {
-        //
-    }
+try {
+    if (!document.documentElement.id) giftHandler();
+} finally {
+    //
 }
 
 // Бургер-меню

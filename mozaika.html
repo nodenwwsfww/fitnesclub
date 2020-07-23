@@ -308,12 +308,14 @@
                     </div>
                     <div class="right">
                         <input type="hidden" name="form_name" value="Заказать карту">
-                        <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
+                        <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."
+                                pattern="^[а-яА-Я ]*$" title="Используйте только русские символы"></p>
                         <p class="input-text"><input type="tel" name="phone" id="callback_form-phone" required
-                                placeholder="Ваш номер телефона..."></p>
+                                placeholder="Ваш номер телефона..." pattern="^(\+)?[1-9]{1,3}([-()]*\d){10}$"
+                                title="Введите правильный номер телефона"></p>
                         <div class="form-bottom">
                             <p class="personal-data">
-                                <input type="checkbox" required id="card_check"><label for="card_check">Я согласен на
+                                <input type="checkbox" id="card_check"><label for="card_check">Я согласен на
                                     обработку персональных данных</label>
                             </p>
                             <p class="submit">
@@ -412,11 +414,13 @@
             <div class="form-wrapper">
                 <form name="banner-form" id="banner-form" action="#" method="post">
                     <input type="hidden" name="form_name" value=" Записаться на визит">
-                    <input name="name" type="text" required placeholder="Ваше имя...">
-                    <input type="tel" name="phone" id="phone" required placeholder="Ваш номер телефона...">
+                    <input name="name" type="text" required placeholder="Ваше имя..." pattern="^[а-яА-Я ]*$"
+                        title="Используйте только русские символы">
+                    <input type="tel" name="phone" id="phone" required placeholder="Ваш номер телефона..."
+                        pattern="^(\+)?[1-9]{1,3}([-()]*\d){10}$" title="Введите правильный номер телефона">
                     <button name="send" class="btn" type="submit">Записаться</button>
                     <p class="personal-data">
-                        <input type="checkbox" required id="check1"><label for="check1">Я согласен на обработку
+                        <input type="checkbox" id="check1"><label for="check1">Я согласен на обработку
                             персональных
                             данных</label>
                     </p>
@@ -478,7 +482,9 @@
                                 <p>Единый телефон</p>
                                 <p class="tel">+7 (800) 555-64-47</p>
                                 <p class="input-text"><input type="tel" name="phone" id="callback_footer_form-phone"
-                                        required="" placeholder="Ваш номер телефона..."></p>
+                                        required="" placeholder="Ваш номер телефона..."
+                                        pattern="^(\+)?[1-9]{1,3}([-()]*\d){10}$" title="Введите правильный номер телефона">
+                                </p>
                                 <button class="btn callback-btn" type="submit" data-popup="#callback_form">Перезвоните
                                     мне
                                 </button>
@@ -488,7 +494,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="left">© Фитнес-центр «Тело», 2019. Все права защищены.</div>
+                <div class="left">© Фитнес-центр «Тело», 2020. Все права защищены.</div>
                 <div class="right">
                     <div class="socials">
                         <div class="social-icon"><a href="#">
@@ -516,7 +522,7 @@
         <a href="#" id="totop"><i class="fa fa-arrow-up" aria-hidden="true"></i>
         </a>
     </div>
-    <div class="forms">
+    <div class="popups">
         <div class="popup" id="callback_form">
             <div class="overlay">
             </div>
@@ -529,11 +535,13 @@
                         <h4>Обратный звонок</h4>
                         <input type="hidden" name="form_name" value=" Обратный звонок">
                         <!--  <input type="hidden" name="club" value="<?=$_GET['club-name']?>"> -->
-                        <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
+                        <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."
+                                pattern="^[а-яА-Я ]*$" title="Используйте только русские символы"></p>
                         <p class="input-text"><input type="tel" name="phone" id="callback_form1-phone" required
-                                placeholder="Ваш номер телефона..."></p>
+                                placeholder="Ваш номер телефона..." pattern="^(\+)?[1-9]{1,3}([-()]*\d){10}$"
+                                title="Введите правильный номер телефона"></p>
                         <p class="personal-data">
-                            <input type="checkbox" required id="check"><label for="check">Я согласен на обработку
+                            <input type="checkbox" id="check"><label for="check">Я согласен на обработку
                                 <br>персональных
                                 данных</label>
 
@@ -555,11 +563,13 @@
                     <form name="free-visit-form" id="form2" action="#" method="post">
                         <h4>Записаться на визит</h4>
                         <input type="hidden" name="form_name" value=" Записаться на визит">
-                        <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
+                        <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."
+                                pattern="^[а-яА-Я ]*$" title="Используйте только русские символы"></p>
                         <p class="input-text"><input type="tel" name="phone" id="callback_form2-phone" required
-                                placeholder="Ваш номер телефона..."></p>
+                                placeholder="Ваш номер телефона..." pattern="^(\+)?[1-9]{1,3}([-()]*\d){10}$"
+                                title="Введите правильный номер телефона"></p>
                         <p class="personal-data">
-                            <input type="checkbox" required id="check2"><label for="check2">Я согласен на обработку
+                            <input type="checkbox" id="check2"><label for="check2">Я согласен на обработку
                                 <br>персональных
                                 данных</label>
 
