@@ -317,36 +317,38 @@
                 </div>
                 <div class="right">
                     <form action="" id="card_order">
-                        <div class="time">
-                            <input id="m1" type="radio" name="card-type" value="1" checked>
-                            <label for="m1">1 месяц</label>
-                            <input id="m2" type="radio" name="card-type" value="6">
-                            <label for="m2">6 месяцев</label>
-                            <input id="m3" type="radio" name="card-type" value="9">
-                            <label for="m3">9 месяцев</label>
-                            <input id="m4" type="radio" name="card-type" value="12">
-                            <label for="m4">12 месяцев</label>
-                        </div>
-                        <div class="club">
-                            <input type="radio" id="card_leto_mozaika" name="club-name" value="mozaika" checked><label
-                                for="card_leto_mozaika">
-                                <h5>Тело «Мозаика»</h5>
-                                <p>Россия, Москва, 7-я Кожуховская ул., 9</p>
-                            </label>
-                        </div>
-
-                        <div class="club">
-                            <input type="radio" id="card_leto_schelkovo" name="club-name" value="schelkovo"><label
-                                for="card_leto_schelkovo">
-                                <h5>Тело «Щелково»</h5>
-                                <p>Россия, г. Щелково, ул. Советская, д. 16</p>
-                            </label>
-                        </div>
-                        <div class="price">
-                            <div class="price-message input-text"><input name="name" type="text"
-                                    placeholder="Промокод"></div>
-                            <div class="price-message">Цена:</div>
-                            <div class="price-message" id="price-total">2999</div>
+                        <div id="calculater">
+                            <div class="time">
+                                <input id="m1" type="radio" name="card-type" value="1" checked>
+                                <label for="m1">1 месяц</label>
+                                <input id="m2" type="radio" name="card-type" value="6">
+                                <label for="m2">6 месяцев</label>
+                                <input id="m3" type="radio" name="card-type" value="9">
+                                <label for="m3">9 месяцев</label>
+                                <input id="m4" type="radio" name="card-type" value="12">
+                                <label for="m4">12 месяцев</label>
+                            </div>
+                            <div class="club">
+                                <input type="radio" id="card_leto_mozaika" name="club-name" value="mozaika" checked><label
+                                    for="card_leto_mozaika">
+                                    <h5>Тело «Мозаика»</h5>
+                                    <p>Россия, Москва, 7-я Кожуховская ул., 9</p>
+                                </label>
+                            </div>
+    
+                            <div class="club">
+                                <input type="radio" id="card_leto_schelkovo" name="club-name" value="schelkovo"><label
+                                    for="card_leto_schelkovo">
+                                    <h5>Тело «Щелково»</h5>
+                                    <p>Россия, г. Щелково, ул. Советская, д. 16</p>
+                                </label>
+                            </div>
+                            <div class="price">
+                                <div class="price-message input-text"><input name="name" type="text"
+                                        placeholder="Промокод"></div>
+                                <div class="price-message">Цена:</div>
+                                <div class="price-message" id="price-total">2999</div>
+                            </div>
                         </div>
                         <input type="hidden" name="form_name" value="Заказать карту">
                         <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."

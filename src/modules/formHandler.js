@@ -1,3 +1,4 @@
+import getChosenClub from "./functions";
 const formHandler = () => {
     document.body.addEventListener("submit", event => {
         event.preventDefault();
@@ -18,12 +19,7 @@ const formHandler = () => {
         const clubsForChoice = form.querySelectorAll("input[name=\"club-name\"");
 
         if (clubsForChoice.length > 0) {
-            let chosenClub = false;
-            [...clubsForChoice].forEach(club => {
-                if (club.checked) {
-                    chosenClub = club.value;
-                }
-            });
+            const chosenClub = getChosenClub(clubsForChoice);
 
             if (form.lastElementChild.tagName.toLowerCase() === "span") form.lastElementChild.remove();
 
