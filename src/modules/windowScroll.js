@@ -1,7 +1,7 @@
 const windowScroll = () => {
     const burgerMenu = document.querySelector(".top-menu"),
         arrowUp = document.getElementById("totop"),
-        firstBlock = document.querySelector(".head");
+        firstBlock = document.querySelector(".header-main");
 
     window.addEventListener("scroll", () => {
         if (pageYOffset > 0) {

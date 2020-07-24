@@ -35,11 +35,12 @@ const formHandler = () => {
             }
         }
 
-        const postData = data => fetch("../server.php", {
+        const postData = data => fetch("./server.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            cache: "default",
             body: JSON.stringify(data)
         });
 
