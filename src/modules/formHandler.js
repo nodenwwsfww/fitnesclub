@@ -40,6 +40,20 @@ const formHandler = () => {
             body: JSON.stringify(data)
         });
 
+        const toggleAnimPreloader = mainContent => {
+            const preloader = document.getElementById("preloader");
+            preloader.classList.toggle("visible");
+            preloader.classList.toggle("hidden");
+            if (mainContent) {
+                console.log(mainContent);
+                console.log("контент отключен");
+                mainContent.classList.remove("active-element");
+                document.querySelector(".main-slider").style.display = "none";
+            } else {
+                document.querySelector(".main-slider").style.display = "block";
+            }
+        };
+
         const resultWindow = document.getElementById("thanks"),
             resultWindowMessage = resultWindow.querySelector(".form-content");
         // Ставим значение, на случай если до этого была ошибка
@@ -55,6 +69,8 @@ const formHandler = () => {
             data[key] = val;
         });
 
+        const currentPopup = form.closest(".popup");
+        toggleAnimPreloader(currentPopup);
         postData(data)
             .then(response => {
                 if (response.status !== 200) {
@@ -77,7 +93,13 @@ const formHandler = () => {
                     input.value = "";
                 }
             })); */
-            .finally(() => resultWindow.classList.toggle("active-element"));
+            .finally(() => {
+                resultWindow.classList.toggle("active-element");
+                /*                 if (currentPopup) {
+                    currentPopup.classList.toggle("active-element");
+                } */
+                toggleAnimPreloader();
+            });
 
     });
 };
