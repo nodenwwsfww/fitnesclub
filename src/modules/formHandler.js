@@ -45,12 +45,10 @@ const formHandler = () => {
             preloader.classList.toggle("visible");
             preloader.classList.toggle("hidden");
             if (mainContent) {
-                console.log(mainContent);
-                console.log("контент отключен");
                 mainContent.classList.remove("active-element");
-                document.querySelector(".main-slider").style.display = "none";
+                document.querySelector(".main-slider").style.display = "none"; // для более красивой анимации
             } else {
-                document.querySelector(".main-slider").style.display = "block";
+                document.querySelector(".main-slider").style.display = "block";  // для более красивой анимации
             }
         };
 
