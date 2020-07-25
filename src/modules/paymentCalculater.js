@@ -18,7 +18,6 @@ const paymentCalculater = () => {
     };
 
     calcBlock.addEventListener("change", () => {
-        console.log(event.target);
         let totalPrice;
         try {
             totalPrice = +calcTotalPrice();
