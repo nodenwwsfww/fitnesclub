@@ -6,7 +6,7 @@ const mainSlider = () => {
         lastTick = 0;
 
     requestAnimationFrame(function applySlider(time) {
-        if (time - lastTick > 3000) {
+        if (time - lastTick > 2500) {
             lastTick = time;
             // Меняем слайд и возвращаем индекс нового слайда
             currentSlideIndex = switchSlide(slides, currentSlideIndex);
