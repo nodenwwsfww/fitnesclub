@@ -69,6 +69,12 @@ const formHandler = () => {
 
         const toggleAnimPreloader = mainContent => {
             const preloader = document.getElementById("preloader");
+            preloader.innerHTML = `
+                <div class="cube1"></div>
+                <div class="cube2"></div>
+            `;
+
+            preloader.classList.add("spinner");
             preloader.classList.toggle("active-element");
             if (mainContent) {
                 mainContent.classList.remove("active-element");
