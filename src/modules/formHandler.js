@@ -69,8 +69,7 @@ const formHandler = () => {
 
         const toggleAnimPreloader = mainContent => {
             const preloader = document.getElementById("preloader");
-            preloader.classList.toggle("visible");
-            preloader.classList.toggle("hidden");
+            preloader.classList.toggle("active-element");
             if (mainContent) {
                 mainContent.classList.remove("active-element");
                 document.querySelector(".main-slider").style.display = "none"; // для более красивой анимации
