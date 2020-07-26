@@ -31,6 +31,34 @@ const formHandler = () => {
             }
         }
 
+        const formValidation = form => {
+            let validStatus = true;
+            const inputs = [...form.querySelectorAll("input")];
+            /* Проверка данных формы на пустоту и валидность,
+            учитываем, что существуют необязательные поля как промокод */
+            inputs.forEach(item => {
+                if (item.tagName.toLowerCase() !== "input") return;
+                if (!item.pattern) return;
+                item.style.border = "";
+                if (!item.dataset.required && !item.value.trim()) return;
+
+                console.log(new RegExp(item.pattern) );
+                if (!new RegExp(item.pattern).test(item.value.trim())) {
+                    item.style.border = "2px solid red";
+                    validStatus = false;
+                }
+
+            });
+            /*  */
+
+            return validStatus;
+        };
+
+        /* На случай если в браузере пойдёт что-то не так */
+        if (!formValidation(form)) {
+            return;
+        }
+
         const postData = data => fetch("./server.php", {
             method: "POST",
             headers: {
@@ -96,7 +124,9 @@ const formHandler = () => {
                 toggleAnimPreloader();
                 [...form.querySelectorAll("input")].forEach(input => {
 
-                    if (input.type.toLowerCase() === "checkbox" || input.name.toLowerCase() === "club-name") {
+                    if (input.type.toLowerCase() === "checkbox" ||
+                        input.type.toLowerCase() === "radio" ||
+                        input.name.toLowerCase() === "club-name") {
                         input.checked = false;
                     } else {
                         input.value = "";
