@@ -42,7 +42,6 @@ const formHandler = () => {
                 item.style.border = "";
                 if (!item.dataset.required && !item.value.trim()) return;
 
-                console.log(new RegExp(item.pattern) );
                 if (!new RegExp(item.pattern).test(item.value.trim())) {
                     item.style.border = "2px solid red";
                     validStatus = false;
