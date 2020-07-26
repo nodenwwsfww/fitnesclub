@@ -2489,10 +2489,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
         padding-right: 10px
     }
 
-    #gallery .gallery-slider .slider-arrow.next,
+/*     #gallery .gallery-slider .slider-arrow.next,
     #gallery .gallery-slider .slider-arrow.prev {
-        display: none !important
-    }
+        display: none !important;
+    } */
 
     #gallery .gallery-slider .slider-dots {
         background-color: rgba(79, 25, 52, .5);

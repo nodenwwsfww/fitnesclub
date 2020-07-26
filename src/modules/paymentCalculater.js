@@ -1,10 +1,10 @@
-import getChosenClub from "./functions";
+import { getChosenClub } from "./functions";
 const paymentCalculater = () => {
     const calcBlock = document.getElementById("calculater");
 
     const calcTotalPrice = () => {
         let total = 0;
-
+        
         const selectedClub = getChosenClub(calcBlock.querySelectorAll("input[name=\"club-name\"")),
             cards = [...calcBlock.querySelectorAll("input[name=\"card-type\"")],
             cardsPrice = (selectedClub === "mozaika" ? [1999, 9900, 13900, 19900] : [2990, 14990, 21990, 24990]);
@@ -13,7 +13,7 @@ const paymentCalculater = () => {
         total += cardsPrice[ cards.findIndex(item => item.checked) ];
 
         /* Скидка 30% при наличии промокода*/
-        total -= calcBlock.querySelector("#input-promocode").value.trim() === "ТЕЛО2020" ? total * (100 - 30) / 100 : 0;
+        total -= calcBlock.querySelector("#input-promocode").value.trim() === "ТЕЛО2020" ? total * 30 / 100 : 0;
         return total;
     };
 

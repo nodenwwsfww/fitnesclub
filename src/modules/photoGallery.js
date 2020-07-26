@@ -1,6 +1,6 @@
 import { switchSlide } from "./functions";
-const mainSlider = () => {
-    const slides = document.querySelectorAll(".main-slider>.slide");
+const photoGallery = () => {
+    const slides = document.querySelectorAll(".gallery-slider>.slide");
 
     let currentSlideIndex = 0,
         lastTick = 0;
@@ -8,7 +8,6 @@ const mainSlider = () => {
     requestAnimationFrame(function applySlider(time) {
         if (time - lastTick > 3000) {
             lastTick = time;
-            // Меняем слайд и возвращаем индекс нового слайда
             currentSlideIndex = switchSlide(slides, currentSlideIndex);
         }
         requestAnimationFrame(applySlider);
@@ -16,4 +15,4 @@ const mainSlider = () => {
 
 };
 
-export default mainSlider;
+export default photoGallery;

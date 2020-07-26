@@ -8,5 +8,15 @@ const getChosenClub = clubNodeList => {
     });
     return chosenClub;
 };
+const switchSlide = (slides, currentSlideIndex) => {
+    slides[currentSlideIndex].style.display = "none";
 
-export default getChosenClub;
+    if (currentSlideIndex >= slides.length - 1) currentSlideIndex = 0;
+    else currentSlideIndex++;
+
+    slides[currentSlideIndex].style.display = "inline";
+
+    return currentSlideIndex;
+};
+
+export { getChosenClub, switchSlide };

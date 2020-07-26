@@ -7,7 +7,9 @@ import giftHandler from "./modules/giftHandler";
 import burgerMenu from "./modules/burgerMenu";
 import formHandler from "./modules/formHandler";
 import paymentCalculater from "./modules/paymentCalculater";
+
 import mainSlider from "./modules/mainSlider";
+import photoGallery from "./modules/photoGallery";
 
 // Событие scroll на странице
 try {
@@ -75,6 +77,13 @@ try {
 // Главный слайдер
 try {
     mainSlider();
+} finally {
+    //
+}
+
+// Фотогалерея
+try {
+    photoGallery();
 } finally {
     //
 }
