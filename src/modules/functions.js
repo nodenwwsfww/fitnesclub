@@ -14,7 +14,7 @@ const switchSlide = (slides, currentSlideIndex) => {
     if (currentSlideIndex >= slides.length - 1) currentSlideIndex = 0;
     else currentSlideIndex++;
 
-    slides[currentSlideIndex].style.display = "inline";
+    slides[currentSlideIndex].style.display = "flex";
 
     return currentSlideIndex;
 };
