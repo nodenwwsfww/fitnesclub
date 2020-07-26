@@ -1,4 +1,4 @@
-import getChosenClub from "./functions";
+import { getChosenClub } from "./functions";
 const formHandler = () => {
     document.body.addEventListener("submit", event => {
         event.preventDefault();
@@ -93,10 +93,15 @@ const formHandler = () => {
             })); */
             .finally(() => {
                 resultWindow.classList.toggle("active-element");
-                /*                 if (currentPopup) {
-                    currentPopup.classList.toggle("active-element");
-                } */
                 toggleAnimPreloader();
+                [...form.querySelectorAll("input")].forEach(input => {
+
+                    if (input.type.toLowerCase() === "checkbox" || input.name.toLowerCase() === "club-name") {
+                        input.checked = false;
+                    } else {
+                        input.value = "";
+                    }
+                });
             });
 
     });
