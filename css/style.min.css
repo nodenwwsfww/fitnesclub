@@ -1542,17 +1542,20 @@ nav.popup-menu .close-menu-btn img {
 .services-slider {
     display: flex;
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px
+/*     padding-left: 15px;
+    padding-right: 15px */
 }
 
 .services-slider .slide {
     text-align: center;
-    margin-right: 6px;
-    margin-left: 6px;
+/*     margin-right: 6px;
+    margin-left: 6px; */
     width: 210px
 }
 
+.service-wrapper {
+    overflow: hidden;
+}
 .services-slider .slide img {
     margin: 0 auto 19px
 }
@@ -1575,7 +1578,7 @@ nav.popup-menu .close-menu-btn img {
     margin: 0 auto
 }
 
-.services-slider .slider-arrow {
+.services-wrapper .slider-arrow {
     position: absolute;
     top: 75px;
     margin-top: -18px;
@@ -1583,7 +1586,7 @@ nav.popup-menu .close-menu-btn img {
     cursor: pointer
 }
 
-.services-slider .slider-arrow span {
+.services-wrapper .slider-arrow span {
     display: block;
     width: 36px;
     height: 37px;
@@ -1593,11 +1596,11 @@ nav.popup-menu .close-menu-btn img {
     padding-top: 11px
 }
 
-.services-slider .slider-arrow.prev {
+.services-wrapper .slider-arrow.prev {
     left: 2px
 }
 
-.services-slider .slider-arrow.next {
+.services-wrapper .slider-arrow.next {
     right: 2px
 }
 
@@ -2260,11 +2263,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
 }
 
 @media only screen and (max-width:1199px) {
-    .services-slider .slider-arrow.prev {
+    .service-wrapper .slider-arrow.prev {
         left: 25px
     }
 
-    .services-slider .slider-arrow.next {
+    .service-wrapper .slider-arrow.next {
         right: 20px
     }
 }
@@ -2369,11 +2372,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
         justify-content: center
     }
 
-    .services-slider .slider-arrow.prev {
+    .service-wrapper .slider-arrow.prev {
         left: 3px
     }
 
-    .services-slider .slider-arrow.next {
+    .service-wrapper .slider-arrow.next {
         right: 3px
     }
 }
@@ -2665,10 +2668,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
     }
 
     header .head .call p {
-        font-size: 12px;
+        font-size: 12px
     }
 
     .slider-dots {
-        bottom: 30px;
+        bottom: 30px
     }
 }

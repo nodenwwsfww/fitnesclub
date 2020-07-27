@@ -10,6 +10,7 @@ import paymentCalculater from "./modules/paymentCalculater";
 
 import mainSlider from "./modules/mainSlider";
 import photoGallery from "./modules/photoGallery";
+import SliderCarousel from "./modules/sliderCarousel";
 
 // Событие scroll на странице
 try {
@@ -87,3 +88,11 @@ try {
 } finally {
     //
 }
+
+// sliderCarousel
+new SliderCarousel({
+    main: ".services-wrapper",
+    wrap: ".services-slider",
+    next: ".arrow-next",
+    prev: ".arrow-prev"
+});
