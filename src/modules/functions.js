@@ -8,15 +8,46 @@ const getChosenClub = clubNodeList => {
     });
     return chosenClub;
 };
-const switchSlide = (slides, currentSlideIndex) => {
+const switchSlide = (sliderName, slides, switchCount) => {
+    let currentSlideIndex = +sessionStorage.getItem(`${sliderName}_currentSlideIndex`);
+    const prevSlideIndex = currentSlideIndex;
     slides[currentSlideIndex].style.display = "none";
 
-    if (currentSlideIndex >= slides.length - 1) currentSlideIndex = 0;
-    else currentSlideIndex++;
+    if (currentSlideIndex + switchCount >= slides.length) currentSlideIndex = 0;
+    else if (currentSlideIndex + switchCount < 0) currentSlideIndex = slides.length - 1;
+    else currentSlideIndex += switchCount;
+
+    if (sliderName === "gallery") {
+        const sliderDotsColl = document.querySelector(".slider-dots").children;
+        sliderDotsColl[prevSlideIndex].classList.remove("slick-active");
+        sliderDotsColl[currentSlideIndex].classList.add("slick-active");
+    }
+
 
     slides[currentSlideIndex].style.display = "flex";
 
+    sessionStorage.setItem(`${sliderName}_currentSlideIndex`, currentSlideIndex);
     return currentSlideIndex;
 };
+const startSlider = (sliderName, slides) => {
+    let
+        lastTick = 0,
+        sliderID = 0;
 
-export { getChosenClub, switchSlide };
+    sliderID = requestAnimationFrame(function applySlider(time) {
+        if (time - lastTick > 2500) {
+            lastTick = time;
+            if (sessionStorage.getItem(`${sliderName}_sliderStatus`) === "run") {
+                switchSlide(sliderName, slides, 1);
+                sessionStorage.setItem(`${sliderName}_sliderID`, sliderID);
+            }
+        }
+        sliderID = requestAnimationFrame(applySlider);
+    });
+};
+
+export {
+    getChosenClub,
+    switchSlide,
+    startSlider
+};

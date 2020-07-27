@@ -2665,10 +2665,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
     }
 
     header .head .call p {
-        font-size: 12px
+        font-size: 12px;
     }
 
     .slider-dots {
-        bottom: 30px
+        bottom: 30px;
     }
 }
