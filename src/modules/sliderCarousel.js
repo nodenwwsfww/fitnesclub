@@ -75,6 +75,7 @@ export default class SliderCarousel {
     nextSlide() {
         if (this.options.position >= this.slidesCount - 1) return;
 
+
         ++this.options.position;
         this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideWidth}%)`;
 
@@ -82,10 +83,4 @@ export default class SliderCarousel {
     addArrow() {
 
     }
-/*     get position() {
-        return this.options.position;
-    }
-    set position(value) {
-        this.options.position = value;
-    } */
 }
