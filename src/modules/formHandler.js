@@ -67,23 +67,6 @@ const formHandler = () => {
             body: JSON.stringify(data)
         });
 
-        const toggleAnimPreloader = mainContent => {
-            const preloader = document.getElementById("preloader");
-            preloader.innerHTML = `
-                <div class="cube1"></div>
-                <div class="cube2"></div>
-            `;
-
-            preloader.classList.add("spinner");
-            preloader.classList.toggle("active-element");
-            if (mainContent) {
-                mainContent.classList.remove("active-element");
-                document.querySelector(".main-slider").style.display = "none"; // для более красивой анимации
-            } else {
-                document.querySelector(".main-slider").style.display = "block";  // для более красивой анимации
-            }
-        };
-
         const resultWindow = document.getElementById("thanks"),
             resultWindowMessage = resultWindow.querySelector(".form-content");
         // Ставим значение, на случай если до этого была ошибка
@@ -98,9 +81,6 @@ const formHandler = () => {
         formData.forEach((val, key) => {
             data[key] = val;
         });
-
-        const currentPopup = form.closest(".popup");
-        toggleAnimPreloader(currentPopup);
         postData(data)
             .then(response => {
                 if (response.status !== 200) {
@@ -115,17 +95,8 @@ const formHandler = () => {
                     <button class="btn close-btn">OK</button>
                 `;
             })
-            /* .finally(() => [...form.querySelectorAll("input")].forEach(input => {
-
-                if (input.type.toLowerCase() === "checkbox" || input.name.toLowerCase() === "club-name") {
-                    input.checked = false;
-                } else {
-                    input.value = "";
-                }
-            })); */
             .finally(() => {
                 resultWindow.classList.toggle("active-element");
-                toggleAnimPreloader();
                 [...form.querySelectorAll("input")].forEach(input => {
 
                     if (input.type.toLowerCase() === "checkbox" ||
