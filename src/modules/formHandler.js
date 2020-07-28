@@ -68,13 +68,18 @@ const formHandler = () => {
         });
 
         const resultWindow = document.getElementById("thanks"),
-            resultWindowMessage = resultWindow.querySelector(".form-content");
+            resultWindowMessage = resultWindow.querySelector(".form-content"),
+            popup = form.closest(".popup"),
+            statusMessage = document.createElement("span");
         // Ставим значение, на случай если до этого была ошибка
         resultWindowMessage.innerHTML = `
             <h4>Спасибо!</h4>
             <p>Ваша заявка отправлена. <br> Мы свяжемся с вами в ближайшее время.</p>
             <button class="btn close-btn">OK</button>
         `;
+        statusMessage.innerHTML = `<br><strong>Выполняется отправка формы...</strong>`;
+        form.append(statusMessage);
+
         const formData = new FormData(form);
         const data = {};
 
@@ -97,8 +102,8 @@ const formHandler = () => {
             })
             .finally(() => {
                 resultWindow.classList.toggle("active-element");
-                const popup = form.closest(".popup");
                 if (popup) popup.classList.toggle("active-element");
+                if (statusMessage) statusMessage.remove();
                 [...form.querySelectorAll("input")].forEach(input => {
 
                     if (input.type.toLowerCase() === "checkbox" ||
