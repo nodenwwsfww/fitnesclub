@@ -97,6 +97,8 @@ const formHandler = () => {
             })
             .finally(() => {
                 resultWindow.classList.toggle("active-element");
+                const popup = form.closest(".popup");
+                if (popup) popup.classList.toggle("active-element");
                 [...form.querySelectorAll("input")].forEach(input => {
 
                     if (input.type.toLowerCase() === "checkbox" ||
