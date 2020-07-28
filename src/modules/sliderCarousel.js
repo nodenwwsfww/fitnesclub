@@ -68,19 +68,22 @@ export default class SliderCarousel {
 
     prevSlide() {
         if (this.options.position <= 0) return;
-
         --this.options.position;
         this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideWidth}%)`;
+        this.arrowHandler();
     }
     nextSlide() {
-        if (this.options.position >= this.slidesCount - 1) return;
-
+        if (this.options.position > this.slidesCount - 1) return;
 
         ++this.options.position;
         this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideWidth}%)`;
+        this.arrowHandler();
 
     }
-    addArrow() {
+    arrowHandler() {
+        this.next.style.display = this.prev.style.display = "block";
 
+        if (this.options.position <= 0) this.prev.style.display = "none";
+        if (this.options.position > this.slidesCount - 1) this.next.style.display = "none";
     }
 }

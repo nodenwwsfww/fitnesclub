@@ -90,9 +90,13 @@ try {
 }
 
 // sliderCarousel
-new SliderCarousel({
-    main: ".services-wrapper",
-    wrap: ".services-slider",
-    next: ".arrow-next",
-    prev: ".arrow-prev"
-});
+try {
+    new SliderCarousel({
+        main: ".services-wrapper",
+        wrap: ".services-slider",
+        next: ".arrow-next",
+        prev: ".arrow-prev"
+    });
+} finally {
+    //
+}
