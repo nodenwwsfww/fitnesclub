@@ -5,19 +5,20 @@ export default class SliderCarousel {
         next,
         prev,
         position = 0,
-        slidesCount = 5
+        slidesToShow = 5,
     }) {
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
         this.slides = this.wrap.querySelectorAll(".slide");
+        this.slidesCount = this.slides.length;
 
         this.next = document.querySelector(next);
 
         this.prev = document.querySelector(prev);
-        this.slidesCount = slidesCount;
+        this.slidesToShow = slidesToShow;
         this.options = {
             position,
-            slideWidth: Math.floor(100 / +this.slidesCount)
+            slideWidth: Math.floor(100 / +this.slidesToShow)
         };
 
         this.init();
@@ -73,7 +74,7 @@ export default class SliderCarousel {
         this.arrowHandler();
     }
     nextSlide() {
-        if (this.options.position > this.slidesCount - 1) return;
+        if (this.options.position > this.slidesCount - (this.slidesToShow + 1)) return;
 
         ++this.options.position;
         this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideWidth}%)`;
@@ -84,6 +85,6 @@ export default class SliderCarousel {
         this.next.style.display = this.prev.style.display = "block";
 
         if (this.options.position <= 0) this.prev.style.display = "none";
-        if (this.options.position > this.slidesCount - 1) this.next.style.display = "none";
+        if (this.options.position > this.slidesCount - (this.slidesToShow + 1)) this.next.style.display = "none";
     }
 }

@@ -91,11 +91,25 @@ try {
 
 // sliderCarousel
 try {
+    let slidesToShow = 2;
+
+    if (document.body.clientWidth <= 576) {
+        slidesToShow = 2;
+    } else if (document.body.clientWidth <= 768) {
+        slidesToShow = 3;
+    } else if (document.body.clientWidth <= 1024) {
+        slidesToShow = 4;
+    } else {
+        slidesToShow = 5;
+    }
+
     new SliderCarousel({
         main: ".services-wrapper",
         wrap: ".services-slider",
         next: ".arrow-next",
-        prev: ".arrow-prev"
+        prev: ".arrow-prev",
+        position: 0,
+        slidesToShow
     });
 } finally {
     //
